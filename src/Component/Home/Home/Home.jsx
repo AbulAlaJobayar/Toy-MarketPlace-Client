@@ -2,22 +2,16 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div>
-            <div>
-                <div>
-                    <img className='h-[700px] w-full' src="https://i.ibb.co/f0fGhpz/playdough-art-with-crab-underwater.jpg" alt="" />
-                </div>
-                <div className=''>
-                    <img src="https://i.ibb.co/qkB4TLw/33482.jpg" alt="" className='w-96' />
-                    <div>
-                        <h1>Pick the best toy for your kid</h1>
-                        <p>We offer a premium service, whether you are shopping at one of our flagship stores or via our website! </p>
-                        <button>Discover Now</button>
+            <div className="hero h-[630px]  " style={{ backgroundImage: `url("https://i.ibb.co/f0fGhpz/playdough-art-with-crab-underwater.jpg")` }} >
+                <div className="hero-content flex-col md:flex-row-reverse justify-between gap-5 w-full">
+                    <img src="https://i.ibb.co/RvHv92m/33482-removebg-preview-removebg-preview.png" className="max-w-sm rounded-lg hidden md:block " />
+                    <div className='text-center md:text-left'>
+                        <h1 className="text-5xl font-bold text-white">Pick the best toy <br /> for your kid!</h1>
+                        <p className="py-6 text-base text-white">We offer a premium service, whether you are shopping <br /> at one of our flagship stores or via our website!</p>
+                        <button className="btn btn-primary font-bold">Discover Now</button>
                     </div>
                 </div>
             </div>
-
-        </div>
     );
 };
 
