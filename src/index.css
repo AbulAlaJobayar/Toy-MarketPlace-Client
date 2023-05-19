@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.primary{
-
-  background-color: #2396DC;
-  color: #181D4E;
+.text-first-Color{
+  @apply text-[#2396DC]
+}
+.text-second-Color{
+  @apply text-[#181D4E]
 }

@@ -3,6 +3,7 @@ import Main from "../Component/Main/Main";
 import Home from "../Component/Home/Home/Home";
 import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import Login from "../Component/Login/Login";
+import SingUp from "../Component/SingUp/SingUp";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         {
           path:'/login',
           element:<Login></Login>
+        },
+        {
+          path:'/singup',
+          element:<SingUp></SingUp>
         }
       ],
     },
