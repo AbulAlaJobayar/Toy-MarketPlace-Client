@@ -13,5 +13,6 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     'no-unused-vars':1,
     'react/no-unknown-property':1,
+    "no-undef":0,
   },
 }

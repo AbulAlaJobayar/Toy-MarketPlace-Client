@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOutUser } = useContext(AuthContext)
+    console.log({ user });
+    const handleLogout = () => {
+        logOutUser()
+            .then(() => {
+                setLoader(true)
+                // Sign-out successful.
+            })
+            .catch((error) => {
+                // An error happened.
+            });
+    }
+
     return (
         <div className="navbar bg-base-100 flex justify-between w-5/6 mx-auto my-5">
             <div className="navbar-start">
@@ -12,15 +26,20 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Home</Link></li>
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
                         <li><Link to='/blog' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
-                        <li>
-                            <div>
+                        {
+                            user ? <>
+                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
+                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
+                                <li>
+                                    <div>
+                                        <img className='w-12 h-12 rounded-full' src={user?.photoURL} title={user?.displayName || "no name found"} />
+                                    </div>
+                                </li>
+                                <li onClick={handleLogout} className='text-base font-bold text-[#181D4E]'>Logout</li>
+                            </> : <li><Link to='/login' className='text-base font-bold text-[#181D4E]'>Login</Link></li>
+                        }
 
-                                <img className='w-12 h-12 rounded-full' src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
-                            </div>
-                        </li>
                     </ul>
 
                 </div>
@@ -32,15 +51,22 @@ const Navbar = () => {
 
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Home</Link></li>
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
+                        {
+                            user ? <>
+                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
+                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
+                                <li>
+                                    <div>
+                                        <img className='w-12 h-12 rounded-full' src={user?.photoURL} title={user?.displayName || "no name found"} />
+                                    </div>
+                                </li>
+                            </> : <li><Link to='/login' className='text-base font-bold text-[#181D4E]'>Login</Link></li>
+                        }
+
                     </ul>
                 </div>
-                <div>
 
-                    <img className='w-12 h-12 rounded-full' src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
-                </div>
             </div>
 
         </div>

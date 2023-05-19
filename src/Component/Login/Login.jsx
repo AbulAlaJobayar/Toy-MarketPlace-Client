@@ -1,15 +1,53 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+    const { loginUser, gmailLogin } = useContext(AuthContext)
+    const [error, setError] = useState()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
+    console.log(error);
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user;
+                navigate(from, { replace: true })
+                console.log({ user });
+            })
+            .then(error => {
+                setError(error);
+            })
     }
+
+    const handleGoogleSingin = () => {
+        gmailLogin()
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    }
+
 
     return (
         <div className="hero min-h-screen  gap-20">
@@ -47,6 +85,7 @@ const Login = () => {
                                     className="input input-bordered"
                                 />
                             </div>
+                            <label className="text-red-600">{error}</label>
                             <input className="btn btn-primary w-full mt-5" type="submit" value="Login" />
 
                             <label className="label">
@@ -54,7 +93,7 @@ const Login = () => {
                             </label>
                         </form>
                         <div className='flex flex-col'>
-                            <button className='mt-2 btn btn-primary ' > <span className="mr-3 text-bold text-2xl"><FaGoogle ></FaGoogle></span> sing in with google</button>
+                            <button className='mt-2 btn btn-primary ' onClick={handleGoogleSingin} > <span className="mr-3 text-bold text-2xl"><FaGoogle ></FaGoogle></span> sing in with google</button>
                         </div>
 
                     </div>
