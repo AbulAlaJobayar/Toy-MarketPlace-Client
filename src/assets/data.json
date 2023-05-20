@@ -1,0 +1,100 @@
+[
+    "toys"{
+        "Marvel": [
+            {
+                "id":1,
+                "picture": "https://i.ibb.co/ZWMNywY/iron-man-g4064eec98-640.jpg",
+                "name": "Iron Man",
+                "price": "$19.99",
+                "rating": 4.5
+            },
+            {
+                "id":2,
+                "picture": "https://i.ibb.co/NtJkRb6/spiderman-g9a29e2456-640.jpg",
+                "name": "Spider-Man",
+                "price": "$24.99",
+                "rating": 4.2
+            },
+            {
+                "id":3,
+                "picture": "https://i.ibb.co/2Zw7BzB/captain-america-gca28a8afb-640.jpg",
+                "name": "Captain America",
+                "price": "$21.99",
+                "rating": 4.7
+            }
+        ]
+    },
+    {
+        "Avengers": [
+            {
+                "id":1,
+                "picture": "https://i.ibb.co/tbTYwjd/nebula-guardian-ge8d289735-640.jpg",
+                "name": "Thor",
+                "price": "$22.99",
+                "rating": 4.6
+            },
+            {
+                "id":2,
+                "picture": "https://i.ibb.co/3cwn1cB/minion-hulk-gaa758b7af-640.jpg",
+                "name": "Hulk",
+                "price": "$20.99"
+            },
+            {
+                "id":3,
+                "picture": "https://i.ibb.co/z4hpSCQ/the-collector-gaeae21bd1-640.jpg",
+                "name": "Black Widow",
+                "price": "$18.99"
+            }
+        ]
+    },
+    {
+        "Star Wars": [
+            {
+                "id":1,
+                "picture": "https://i.ibb.co/R3GLMfp/avenger-hulk-hero-ga02e01243-640.jpg",
+                "name": "Luke Skywalker",
+                "price": "$17.99",
+                "rating": 4.4
+            },
+            {
+                "id":2,
+                "picture": "https://i.ibb.co/2Zw7BzB/captain-america-gca28a8afb-640.jpg",
+                "name": "Darth Vader",
+                "price": "$25.99",
+                "rating": 4.1
+            },
+            {
+                "id":3,
+                "picture": "https://i.ibb.co/B3XsChN/groot-super-hero-ga893c1c3c-640.jpg",
+                "name": "Yoda",
+                "price": "$23.99",
+                "rating": 4.9
+            }
+        ]
+    },
+    {
+        "Transformers": [
+            {
+                "id":1,
+                "picture": "https://i.ibb.co/ZWMNywY/iron-man-g4064eec98-640.jpg",
+                "name": "Optimus Prime",
+                "price": "$26.99",
+                "rating": 4.7
+            },
+            {
+                "id":2,
+                "picture": "https://i.ibb.co/25TPK0s/marvel-g83ac97056-640.jpg",
+                "name": "Bumblebee",
+                "price": "$19.99",
+                "rating": 4.3
+            },
+            {
+                "id":3,
+                "picture": "https://i.ibb.co/3cwn1cB/minion-hulk-gaa758b7af-640.jpg",
+                "name": "Megatron",
+                "price": "$28.99",
+                "rating": 4.5
+            }
+        ]
+    }
+]

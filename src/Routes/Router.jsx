@@ -4,6 +4,8 @@ import Home from "../Component/Home/Home/Home";
 import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import Login from "../Component/Login/Login";
 import SingUp from "../Component/SingUp/SingUp";
+import AddAToy from "../Component/AddAToy/AddAToy";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,11 @@ const router = createBrowserRouter([
         {
           path:'/singup',
           element:<SingUp></SingUp>
+        },
+        {
+          path:'/addatoy',
+          element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+
         }
       ],
     },
