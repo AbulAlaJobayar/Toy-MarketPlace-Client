@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Tbody = ({data}) => {
+
+// eslint-disable-next-line react/prop-types
+const Tbody = ({data,index}) => {
     const {user}=useContext(AuthContext)
     const {category,details,photo,price,quantity,rating,sellerName,selleremail,toyName,_id} = data || {};
     console.log(data);
     return (
         <>
             <tr>
-                <th>
-                    
-                </th>
+                <td>
+                    {index + 1}
+                </td>
                 <td>
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
@@ -33,7 +35,9 @@ const Tbody = ({data}) => {
                 <td>{price}</td>
                 <td>{quantity}</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details </button>
+                    <Link to={`/viewdetails/${_id}`}>
+                        <button> view details</button>
+                    </Link>
 
                 </th>
             </tr>

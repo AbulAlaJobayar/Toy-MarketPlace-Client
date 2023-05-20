@@ -6,11 +6,12 @@ import MyToysBody from "./MyToysBody";
 const MyToys = () => {
     const [datas, setDatas] = useState([]);
     const { user } = useContext(AuthContext)
+    const [toy,setToy]=useState(datas)
     useEffect(() => {
         fetch(`http://localhost:5000/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setDatas(data))
-    }, [user])
+    }, [datas])
 
 
     return (
@@ -23,9 +24,7 @@ const MyToys = () => {
                         <thead>
                             <tr>
                                 <th>
-                                    <label>
-                                        <input type="checkbox" className="checkbox" />
-                                    </label>
+                                   #
                                 </th>
                                 <th>Toy</th>
                                 <th>Seller Info</th>
@@ -37,8 +36,11 @@ const MyToys = () => {
                         </thead>
                         <tbody>
                             {
-                                datas.map(data => <MyToysBody key={data._id}
+                                datas.map((data,index )=> <MyToysBody key={data._id}
                                     data={data}
+                                    index={index}
+                                    toy={toy}
+                                    setToy={setToy}
                                 ></MyToysBody>)
                             }
                         </tbody>

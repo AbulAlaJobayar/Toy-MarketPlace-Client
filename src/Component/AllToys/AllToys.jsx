@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Tbody from './Tbody';
 
 const AllToys = () => {
@@ -18,7 +18,7 @@ const AllToys = () => {
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    #
                                 </label>
                             </th>
                             <th>Toy</th>
@@ -30,8 +30,9 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            datas.slice(0, 20).map(data => <Tbody key={data._id}
+                            datas.slice(0, 20).map((data,index) => <Tbody key={data._id}
                                 data={data}
+                                index={index}
                             ></Tbody>)
                         }
                     </tbody>

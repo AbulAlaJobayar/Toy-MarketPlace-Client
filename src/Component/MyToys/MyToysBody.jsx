@@ -1,16 +1,59 @@
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 // eslint-disable-next-line react/prop-types
-const MyToysBody = ({data}) => {
+const MyToysBody = ({ data, index,toy,setToy }) => {
 
-    const {category,details,photo,price,quantity,rating,sellerName,selleremail,toyName,_id} = data || {};
+    const { category, photo, price, quantity,sellerName, selleremail, toyName, _id } = data || {};
+
+    const handleDeleted = (_id) => {
+        console.log(_id)
+        Swal.fire({
+            title: 'Are you sure wont to delete this?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/postdelete/${_id}`, {
+                    method:'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        // eslint-disable-next-line react/prop-types
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            // eslint-disable-next-line react/prop-types
+                            const remaining=toy.filter(t=>t._id !==_id)
+                            setToy(remaining)
+                        }
+                    })
+
+            }
+        })
+    }
+
+
+
+
+
     return (
         <>
             <tr>
-                <th>
-                    
-                </th>
+                <td>
+                    {index + 1}
+                </td>
                 <td>
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
@@ -32,11 +75,14 @@ const MyToysBody = ({data}) => {
                 <td>{price}</td>
                 <td>{quantity}</td>
                 <td>
-                    <button className="btn btn-ghost btn-xs">Update </button>
+                   <Link
+                   to={`/updatetoy/${_id}`}> <button className="btn btn-ghost btn-xs">Update </button></Link>
 
                 </td>
                 <td >
-                    <AiFillDelete className='cursor-pointer'></AiFillDelete>
+                    <button
+                        onClick={() => handleDeleted(_id)}
+                    ><AiFillDelete className='cursor-pointer'></AiFillDelete></button>
                 </td>
             </tr>
         </>

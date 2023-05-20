@@ -52,7 +52,11 @@ const AddAToy = () => {
         .then(data=>{
             console.log(data);
             if(data.insertedId){
-                alert('services added successfully')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Toy Added Successfully !',
+                  })
             }
         })
     }
