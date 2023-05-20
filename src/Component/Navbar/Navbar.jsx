@@ -25,12 +25,12 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Home</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
+                        <li><Link to='/alltoys' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
                         <li><Link to='/blog' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
                         {
                             user ? <>
                                 <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
-                                <li><Link to='/addatoy' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
+                                <li><Link to='/alltoys' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
                                 <li>
                                     <div>
                                         <img className='w-12 h-12 rounded-full' src={user?.photoURL} title={user?.displayName || "no name found"} />
@@ -50,7 +50,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
 
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Home</Link></li>
-                        <li><Link to='/' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
+                        <li><Link to='/alltoys' className='text-base font-bold text-[#181D4E]'>All Toys</Link></li>
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
                         {
                             user ? <>

@@ -6,6 +6,7 @@ import Login from "../Component/Login/Login";
 import SingUp from "../Component/SingUp/SingUp";
 import AddAToy from "../Component/AddAToy/AddAToy";
 import PrivateRoute from "./PrivateRoute";
+import AllToys from "../Component/AllToys/AllToys";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
           element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
 
         },
+        {
+          path:'/alltoys',
+          element:<AllToys></AllToys>
+        }
        
       ],
     },
