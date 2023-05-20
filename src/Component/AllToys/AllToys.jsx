@@ -10,6 +10,7 @@ const AllToys = () => {
     }, [])
     return (
         <div>
+            <h1 className='text-5xl font-bold text-center mb-10'>All Toys</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
