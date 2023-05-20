@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 // eslint-disable-next-line react/prop-types
-const Tbody = ({data,index}) => {
-    const {user}=useContext(AuthContext)
-    const {category,details,photo,price,quantity,rating,sellerName,selleremail,toyName,_id} = data || {};
-    console.log(data);
+const Tbody = ({ data, index }) => {
+    const { user } = useContext(AuthContext)
+    const { category, details, photo, price, quantity, rating, sellerName, selleremail, toyName, _id } = data || {};
+
     return (
         <>
             <tr>
@@ -34,12 +34,17 @@ const Tbody = ({data,index}) => {
                 </td>
                 <td>{price}</td>
                 <td>{quantity}</td>
-                <th>
-                    <Link to={`/viewdetails/${_id}`}>
-                        <button> view details</button>
-                    </Link>
+                <td>
+                    {
+                        user ? <Link to={`/viewdetails/${_id}`}>
+                            <button> view details</button>
+                        </Link> : <Link to="/login">
+                            <button> view details</button>
+                        </Link>
+                    }
 
-                </th>
+
+                </td>
             </tr>
         </>
     );

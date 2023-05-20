@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/viewdetails/:id',
-          element:<Details></Details>,
+          element:<PrivateRoute><Details></Details></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/postdata/${params.id}`)
         },
        
