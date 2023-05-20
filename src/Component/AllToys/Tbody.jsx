@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { Navigate } from 'react-router-dom';
 
 const Tbody = ({data}) => {
+    const {user}=useContext(AuthContext)
     const {category,details,photo,price,quantity,rating,sellerName,selleremail,toyName,_id} = data || {};
     console.log(data);
     return (
@@ -30,7 +33,8 @@ const Tbody = ({data}) => {
                 <td>{price}</td>
                 <td>{quantity}</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <button className="btn btn-ghost btn-xs">details </button>
+
                 </th>
             </tr>
         </>

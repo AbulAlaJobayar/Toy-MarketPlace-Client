@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import Tbody from './Tbody';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
-const AllToys = () => {
-    const [datas, setDatas] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/alltoyes')
-            .then(res => res.json())
-            .then(data => setDatas(data))
-    }, [])
+
+const MyToys = () => {
+const [datas,setDatas]=useState([]);
+const {user}=useContext(AuthContext)
+useEffect(()=>{
+    fetch(`http://localhost:5000/mytoys/${user?.email}`)
+    .then(res=>res.json())
+    .then(data=>setDatas(data))
+},[user])
+
+
     return (
         <div>
+            <div>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -37,7 +42,8 @@ const AllToys = () => {
                 </table>
             </div>
         </div>
+        </div>
     );
 };
 
-export default AllToys;
+export default MyToys;

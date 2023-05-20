@@ -29,7 +29,7 @@ const Navbar = () => {
                         <li><Link to='/blog' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
                         {
                             user ? <>
-                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
+                                <li><Link to='/mytoys' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
                                 <li><Link to='/alltoys' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
                                 <li>
                                     <div>
@@ -54,7 +54,7 @@ const Navbar = () => {
                         <li><Link to='/' className='text-base font-bold text-[#181D4E]'>Blog</Link></li>
                         {
                             user ? <>
-                                <li><Link to='/' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
+                                <li><Link to='/mytoys' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
                                 <li><Link to='/addatoy' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
                                 <li>
                                     <div>
