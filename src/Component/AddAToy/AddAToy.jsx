@@ -109,8 +109,7 @@ const AddAToy = () => {
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text"
-                                defaultValue="$"
+                            <input type="number"
                                 name="price"
                                 placeholder="price" className="input input-bordered" />
                         </div>

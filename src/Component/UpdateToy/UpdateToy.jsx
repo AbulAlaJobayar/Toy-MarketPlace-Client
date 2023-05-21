@@ -57,7 +57,7 @@ const UpdateToy = () => {
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text"
+                            <input type="number"
                                 defaultValue={price}
                                 name="price"
                                 placeholder="price" className="input input-bordered" />
