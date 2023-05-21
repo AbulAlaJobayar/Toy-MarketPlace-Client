@@ -1,20 +1,10 @@
-import { useEffect, useState } from 'react';
+
 import Gallery from '../Gallery/Gallery';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 
 
 const Home = () => {
-    const [toys,setToys]=useState([]);
-
-    useEffect(()=>{
-        fetch('http://localhost:5000/homedata')
-        .then(res=>res.json())
-        .then(data=>setToys(data))
-    },[])
-    
-
-
-
+   
     return (
         <div>
             <div className="hero h-[630px]  " style={{ backgroundImage: `url("https://i.ibb.co/f0fGhpz/playdough-art-with-crab-underwater.jpg")` }} >
