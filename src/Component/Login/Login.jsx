@@ -18,8 +18,11 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
-                navigate(from, { replace: true })
-                console.log({ user });
+                if(user){
+                 return navigate(from, { replace: true })
+                }
+                
+        
             })
             .then(error => {
                 setError(error);

@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const ShopByDetails = ({ toy }) => {
-    const { _id } = toy || {}
-    console.log(_id);
+    const user=useContext(AuthContext)
+    const { _id,photo,price,toyName,rating} = toy || {}
+
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <div className="card w-full bg-base-100 shadow-xl">
+            <figure><img src={photo} alt="marvel" className='w-full h-60' /></figure>
             <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                <h2 className="text-3xl font-bold capitalize text-first-Color">{toyName}</h2>
+                <p className="text-xl font-bold capitalize text-second-Color">Price: ${price}</p>
+                <p className="text-xl font-bold capitalize text-second-Color">Rating: {rating} <sup className='text-base'>Stars</sup></p>
+
+                <div className="w-full">
+                <Link to={`/viewdetails/${_id}`}>
+                            <button className='btn btn-primary w-full'> view details</button>
+                        </Link>
                 </div>
             </div>
         </div>

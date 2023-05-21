@@ -30,21 +30,26 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <TabPanel>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-6 w-5/6'>
                     {
                         toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
                     }
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-6 w-5/6'>
                         {
                             toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
                         }
-                    
+                    </div>
                 </TabPanel>
                 <TabPanel>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-auto gap-6 w-5/6'>
                 {
-                        toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
-                    }
+                            toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
+                        }
+                    
+                </div>
                 </TabPanel>
             </Tabs>
         </div>

@@ -35,15 +35,10 @@ const Tbody = ({ data, index }) => {
                 <td>${price}</td>
                 <td>{quantity}</td>
                 <td>
-                    {
-                        user ? <Link to={`/viewdetails/${_id}`}>
-                            <button> view details</button>
-                        </Link> : <Link to="/login">
+                <Link to={`/viewdetails/${_id}`}>
                             <button> view details</button>
                         </Link>
-                    }
-
-
+                   
                 </td>
             </tr>
         </>
