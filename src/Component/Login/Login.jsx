@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import UseTitle from "../../hooks/Usetitle";
 
 
 const Login = () => {
@@ -10,7 +9,6 @@ const Login = () => {
     const [error, setError] = useState()
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || "/";
-    UseTitle('Login')
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;

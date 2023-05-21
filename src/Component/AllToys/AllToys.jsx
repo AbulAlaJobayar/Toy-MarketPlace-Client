@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Tbody from './Tbody';
-import UseTitle from '../../hooks/Usetitle';
+
 
 const AllToys = () => {
     const [datas, setDatas] = useState([]);
     const [search, setSearch] = useState(" ")
     console.log(search)
-    UseTitle('AllToys')
+   
 
     useEffect(() => {
         fetch('https://assingment-11-server-blue.vercel.app/alltoyes')
