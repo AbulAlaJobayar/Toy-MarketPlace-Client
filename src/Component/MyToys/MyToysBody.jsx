@@ -21,7 +21,7 @@ const MyToysBody = ({ data, index,toy,setToy }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/postdelete/${_id}`, {
+                fetch(`https://assingment-11-server-blue.vercel.app/postdelete/${_id}`, {
                     method:'DELETE'
                 })
                     .then(res => res.json())

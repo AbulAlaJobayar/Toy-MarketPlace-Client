@@ -1,6 +1,8 @@
 import React from 'react';
+import UseTitle from '../../hooks/Usetitle';
 
 const Blogs = () => {
+    UseTitle("blog")
     return (
         <div className='w-5/6 mx-auto '>
             <h1 className='text-5xl font-bold text-center my-10'>Blog page</h1>
@@ -18,7 +20,7 @@ const Blogs = () => {
                 </div>
                 <div>
                     <h1 className='text-3xl font-bold'> When token is used</h1>
-                    <p>It's important to keep in mind that the OAuth 2.0 specification defines access tokens and refresh tokens. So, if we were to discuss authorization strategies in terms of other identity protocols or frameworks, such as SAML, we would not have the concepts of access tokens or refresh tokens.
+                    <p>It is important to keep in mind that the OAuth 2.0 specification defines access tokens and refresh tokens. So, if we were to discuss authorization strategies in terms of other identity protocols or frameworks, such as SAML, we would not have the concepts of access tokens or refresh tokens.
 
                         For those involved with web development, access token and refresh tokens are common talk because the web extensively uses token-based authorization and authentication through the OAuth 2.0 framework and the OpenID Connect protocol.
 
@@ -28,17 +30,17 @@ const Blogs = () => {
 
                         Is the client a Single-Page Application (SPA)? Use Authorization Code Flow with Proof Key for Code Exchange (PKCE).
 
-                        Is the client a Single-Page Application (SPA) that doesn't need an access token? Use the Implicit Flow with Form Post.
+                        Is the client a Single-Page Application (SPA) that does not need an access token? Use the Implicit Flow with Form Post.
 
                         Is the client the resource owner? You may use the Client Credentials Flow.
 
                         Is the client absolutely trusted with user credentials? You may use the Resource Owner Password Flow.
 
-                        If there's an app for that, there's also a flow for that!
+                        If there is an app for that, thereis also a flow for that!
 
-                        Keep in mind that according to the spec, when using the Implicit Flow, the authorization server should not issue refresh tokens. The Implicit flow is often implemented in Single-Page Applications (SPAs), which run on the frontend layer of a system architecture. There's no easy way of keeping a refresh token secure in the frontend layer on its own.
+                        Keep in mind that according to the spec, when using the Implicit Flow, the authorization server should not issue refresh tokens. The Implicit flow is often implemented in Single-Page Applications (SPAs), which run on the frontend layer of a system architecture. There is no easy way of keeping a refresh token secure in the frontend layer on its own.
 
-                        Using the Authorization Code Flow with Proof Key for Code Exchange (PKCE) mitigates many risks inherent to the Implicit Flow. For example, when using the implicit grant type, the access token is transmitted in the URI fragment, which can expose it to unauthorized parties. You can learn more about these vulnerabilities by reading the "Misuse of Access Token to Impersonate Resource Owner in Implicit Flow" section of the spec.
+                        Using the Authorization Code Flow with Proof Key for Code Exchange (PKCE) mitigates many risks inherent to the Implicit Flow. For example, when using the implicit grant type, the access token is transmitted in the URI fragment, which can expose it to unauthorized parties. You can learn more about these vulnerabilities by reading the Misuse of Access Token to Impersonate Resource Owner in Implicit Flow section of the spec.
 
                         However, implementing PKCE in your applications still has no impact on how secure refresh tokens are.
 

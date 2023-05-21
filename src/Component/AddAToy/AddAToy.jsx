@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Select from 'react-select';
 import Swal from "sweetalert2";
+import UseTitle from "../../hooks/Usetitle";
 
 
 const options = [
@@ -15,6 +16,7 @@ const AddAToy = () => {
     const { user } = useContext(AuthContext);
     const [selectedOption, setSelectedOption] = useState(null);
     console.log({ user });
+    UseTitle("AddAToy")
     const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
@@ -42,7 +44,7 @@ const AddAToy = () => {
 
         }
 
-        fetch('http://localhost:5000/postdata',{
+        fetch('https://assingment-11-server-blue.vercel.app/postdata',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

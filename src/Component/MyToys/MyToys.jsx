@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysBody from "./MyToysBody";
+import UseTitle from "../../hooks/Usetitle";
 
 
 const MyToys = () => {
     const [datas, setDatas] = useState([]);
+    UseTitle('MyToys')
     const { user } = useContext(AuthContext)
     const [toy,setToy]=useState(datas)
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://assingment-11-server-blue.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [datas])

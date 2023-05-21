@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 w-full gap-4 p-10 bg-base-200 text-base-content mx-auto ">
+        <footer className="grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 w-full gap-4 p-10   bg-base-200 text-base-content mx-auto ">
             <div className='flex flex-col gap-4 mx-auto'>
                 <h1 className='text-4xl font-bold text-[#2396DC]'>Funtopia</h1>
                 <p>Funtopia Industries Ltd<br />Copyright © 2023 - All right reserved</p>

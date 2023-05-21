@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import UseTitle from '../../hooks/Usetitle';
 
 const UpdateToy = () => {
     const data = useLoaderData()
+    UseTitle("UpdateToy")
     // Price, available quantity, Detail description)
     const { category, details, photo, price, quantity, rating, sellerName, selleremail, toyName, _id } = data || {};
 
@@ -24,7 +26,7 @@ const UpdateToy = () => {
 
         }
 
-        fetch(`http://localhost:5000/postdata/${_id}`,{
+        fetch(`https://assingment-11-server-blue.vercel.app/postdata/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"

@@ -2,8 +2,10 @@
 import { Link, useRouteError } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from "../../assets/animation.json";
+import UseTitle from '../../hooks/Usetitle';
 
 const ErrorPage = () => {
+    UseTitle('error')
     const { error, status } = useRouteError()
     return (
         <div>

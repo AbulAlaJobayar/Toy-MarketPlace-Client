@@ -11,9 +11,9 @@ const ShopByCategory = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToyByCategory/${category}`)
+        fetch(`https://assingment-11-server-blue.vercel.app/allToyByCategory/${category}`)
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data =>setToys(data))
     }, [category])
     console.log(toys)
     const handleMarvel = tabName => {

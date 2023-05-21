@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import Tbody from './Tbody';
+import UseTitle from '../../hooks/Usetitle';
 
 const AllToys = () => {
     const [datas, setDatas] = useState([]);
     const [search, setSearch] = useState(" ")
     console.log(search)
+    UseTitle('AllToys')
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltoyes')
+        fetch('https://assingment-11-server-blue.vercel.app/alltoyes')
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [])
     const handleSearch = () => {
-        fetch(`http://localhost:5000/getToyByText/${search}`)
+        fetch(`https://assingment-11-server-blue.vercel.app/getToyByText/${search}`)
             .then(res=>res.json())
             .then(data=>setDatas(data))
     }

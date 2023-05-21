@@ -47,12 +47,12 @@ const router = createBrowserRouter([
         {
           path:'/updatetoy/:id',
           element:<UpdateToy></UpdateToy>,
-          loader:({params})=>fetch(`http://localhost:5000/postdata/${params.id}`)
+          loader:({params})=>fetch(`https://assingment-11-server-blue.vercel.app/postdata/${params.id}`)
         },
         {
           path:'/viewdetails/:id',
           element:<PrivateRoute><Details></Details></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/postdata/${params.id}`)
+          loader:({params})=>fetch(`https://assingment-11-server-blue.vercel.app/postdata/${params.id}`)
         },
         {
           path:'/blog',
