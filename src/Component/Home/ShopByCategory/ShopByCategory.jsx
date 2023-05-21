@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import ShopByDetails from './ShopByDetails';
 
 const ShopByCategory = () => {
 
@@ -30,17 +31,19 @@ const ShopByCategory = () => {
 
                 <TabPanel>
                     {
-                        toys.map(toy=><img src={toy.photo}></img>)
+                        toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
                     }
                 </TabPanel>
                 <TabPanel>
-                {
-                        toys.map(toy=><img src={toy.photo}></img>)
-                    }
+                
+                        {
+                            toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
+                        }
+                    
                 </TabPanel>
                 <TabPanel>
                 {
-                        toys.map(toy=><img src={toy.photo}></img>)
+                        toys.map(toy=><ShopByDetails key={toy._id}toy={toy}></ShopByDetails>)
                     }
                 </TabPanel>
             </Tabs>
