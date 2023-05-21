@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Select from 'react-select';
+import Swal from "sweetalert2";
 
 
 const options = [
-    { value: 'Marvel', label: 'Marvel' },
-    { value: 'Star Wars', label: 'Star Wars' },
-    { value: 'Avengers', label: 'Avengers' },
+    { value: 'marvel', label: 'marvel' },
+    { value: 'starwars', label: 'starwars' },
+    { value: 'avengers', label: 'avengers' },
 ];
 
 
@@ -57,6 +58,7 @@ const AddAToy = () => {
                     title: 'Success',
                     text: 'Toy Added Successfully !',
                   })
+                  form.reset()
             }
         })
     }

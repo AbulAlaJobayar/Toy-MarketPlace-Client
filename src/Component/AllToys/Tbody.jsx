@@ -32,7 +32,7 @@ const Tbody = ({ data, index }) => {
                     <br />
                     <span className="badge badge-ghost badge-sm">{selleremail}</span>
                 </td>
-                <td>{price}</td>
+                <td>${price}</td>
                 <td>{quantity}</td>
                 <td>
                     {

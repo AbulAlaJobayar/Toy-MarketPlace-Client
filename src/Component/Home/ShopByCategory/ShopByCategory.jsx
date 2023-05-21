@@ -5,30 +5,45 @@ import 'react-tabs/style/react-tabs.css';
 
 const ShopByCategory = () => {
 
-    const [toys,setToys]=useState([]);
-    const [cata,setCata]=useState();
+    const [toys, setToys] = useState([]);
+    const [category, setCategory] = useState('marvel')
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/homedata')
-        .then(res=>res.json())
-        .then(data=>setToys(data))
-    },[])
-    // const { _id, name, data } = toy
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/allToyByCategory/${category}`)
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [category])
+    console.log(toys)
+    const handleMarvel = tabName => {
+        setCategory(tabName)
+    }
 
     return (
         <div>
-                <Tabs>
-               <TabList>
-                   <Tab>{toys.map(toy=>setCata(toy))}</Tab>
-               </TabList>
+            <Tabs>
+                <TabList>
+                    <Tab><button onClick={() => handleMarvel('marvel')}>Marvel</button></Tab>
+                    <Tab><button onClick={() => handleMarvel('avengers')}>Avengers</button></Tab>
+                    <Tab><button onClick={() => handleMarvel('starwars')}>Star War</button></Tab>
+                </TabList>
 
-               <TabPanel>
-                   <h2>Any content 1</h2>
-               </TabPanel>
-               <TabPanel>
-                   <h2>Any content 2</h2>
-               </TabPanel>
-           </Tabs> 
+                <TabPanel>
+                    {
+                        toys.map(toy=><img src={toy.photo}></img>)
+                    }
+                </TabPanel>
+                <TabPanel>
+                {
+                        toys.map(toy=><img src={toy.photo}></img>)
+                    }
+                </TabPanel>
+                <TabPanel>
+                {
+                        toys.map(toy=><img src={toy.photo}></img>)
+                    }
+                </TabPanel>
+            </Tabs>
         </div>
     );
 };

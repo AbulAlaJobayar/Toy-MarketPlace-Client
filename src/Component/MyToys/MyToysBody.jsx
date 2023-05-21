@@ -72,7 +72,7 @@ const MyToysBody = ({ data, index,toy,setToy }) => {
                     <br />
                     <span className="badge badge-ghost badge-sm">{selleremail}</span>
                 </td>
-                <td>{price}</td>
+                <td>${price}</td>
                 <td>{quantity}</td>
                 <td>
                    <Link
