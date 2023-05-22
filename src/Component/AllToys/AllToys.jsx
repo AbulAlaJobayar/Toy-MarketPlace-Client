@@ -4,8 +4,7 @@ import Tbody from './Tbody';
 
 const AllToys = () => {
     const [datas, setDatas] = useState([]);
-    const [search, setSearch] = useState(" ")
-    console.log(search)
+    const [search, setSearch] = useState(" ");
    
 
     useEffect(() => {

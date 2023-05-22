@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -20,8 +21,15 @@ const Login = () => {
         const password = form.password.value;
         loginUser(email, password)
             .then(result => {
+                console.log(result.user)
                 const user = result.user;
                 if(user){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'you are Login successfully ',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                  return navigate(from, { replace: true })
                 }
                 
@@ -35,22 +43,19 @@ const Login = () => {
     const handleGoogleSingin = () => {
         gmailLogin()
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-                // The signed-in user info.
                 const user = result.user;
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
+                if(user){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'you are Login successfully ',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                    return navigate(from, { replace: true })
+                   }
+
             }).catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
+                console.log(error)
             });
     }
 

@@ -15,7 +15,7 @@ const ShopByCategory = () => {
             .then(res => res.json())
             .then(data =>setToys(data))
     }, [category])
-    console.log(toys)
+    
     const handleMarvel = tabName => {
         setCategory(tabName)
     }

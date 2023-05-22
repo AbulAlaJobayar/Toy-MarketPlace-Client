@@ -9,7 +9,7 @@ const MyToysBody = ({ data, index,toy,setToy }) => {
     const { category, photo, price, quantity,sellerName, selleremail, toyName, _id } = data || {};
 
     const handleDeleted = (_id) => {
-        console.log(_id)
+        
         Swal.fire({
             title: 'Are you sure wont to delete this?',
             text: "You won't be able to revert this!",
@@ -26,7 +26,7 @@ const MyToysBody = ({ data, index,toy,setToy }) => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        
                         // eslint-disable-next-line react/prop-types
                         if (data.deletedCount > 0) {
                             Swal.fire(

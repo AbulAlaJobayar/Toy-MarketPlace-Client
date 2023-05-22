@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 const Details = () => {
     const datas = useLoaderData();
     const { category, details, photo, price, quantity, rating, sellerName, selleremail, toyName, _id } = datas || {};
-    console.log(datas);
+    
     return (
         <div className='w-5/6 mx-auto my-20'>
             <h1 className='text-5xl font-bold text-center mb-16'>View Details</h1>

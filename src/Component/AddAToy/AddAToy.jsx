@@ -20,7 +20,7 @@ const AddAToy = () => {
         document.title = (` Add a Toy -- Funtopia`);
     }, []);
 
-    console.log({ user });
+    
     const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
@@ -57,7 +57,7 @@ const AddAToy = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+            
             if(data.insertedId){
                 Swal.fire({
                     icon: 'success',

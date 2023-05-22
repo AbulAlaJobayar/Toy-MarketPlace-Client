@@ -1,10 +1,10 @@
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const SingUp = () => {
     const { createUser } = useContext(AuthContext);
-    console.log(createUser);
+    const [error, setError] = useState('');
     useEffect(() => {
         document.title = (` SingUP--Funtopia`);
     }, []);
@@ -17,15 +17,19 @@ const SingUp = () => {
         const password = form.password.value;
         const photo = form.photo.value;
 
-        console.log(name, email, password, photo);
         createUser(email, password)
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-        })
-        .then(error=>{
-            console.log(error);
-        })
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user);
+            })
+            .catch((error) => {
+               
+                const errorMessage = error.message;
+                setError(errorMessage)
+                // ..
+            });
+
     }
 
     return (
@@ -91,6 +95,7 @@ const SingUp = () => {
 
 
                             </div>
+                            <div><h1>{error}</h1></div>
                             <input className="btn btn-primary w-full mt-5" type="submit" value="SingUp" />
 
                             <label className="label">

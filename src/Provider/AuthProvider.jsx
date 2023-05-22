@@ -11,12 +11,12 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loader, setLoader] = useState(true);
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
     
 
 const gmailLogin=()=>{
-  return signInWithPopup(auth, provider)
+  return signInWithPopup(auth, googleProvider)
 }
 
     const createUser = (email, password) => {
