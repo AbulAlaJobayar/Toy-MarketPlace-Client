@@ -12,6 +12,9 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [datas])
+    useEffect(() => {
+        document.title = (` My Toys--Funtopia`);
+    }, []);
 
 
     return (

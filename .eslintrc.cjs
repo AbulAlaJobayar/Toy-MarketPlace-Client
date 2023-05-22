@@ -11,8 +11,10 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'no-unused-vars':1,
-    'react/no-unknown-property':1,
+    'no-unused-vars':0,
+    'react/no-unknown-property':0,
     "no-undef":0,
+    "react/prop-types":0,
+    
   },
 }

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Select from 'react-select';
 import Swal from "sweetalert2";
@@ -15,6 +15,11 @@ const options = [
 const AddAToy = () => {
     const { user } = useContext(AuthContext);
     const [selectedOption, setSelectedOption] = useState(null);
+
+    useEffect(() => {
+        document.title = (` Add a Toy -- Funtopia`);
+    }, []);
+
     console.log({ user });
     const handleAddToy = event => {
         event.preventDefault();

@@ -13,6 +13,9 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [])
+    useEffect(() => {
+        document.title = (` All Toyes--Funtopia`);
+    }, []);
     const handleSearch = () => {
         fetch(`https://assingment-11-server-blue.vercel.app/getToyByText/${search}`)
             .then(res=>res.json())

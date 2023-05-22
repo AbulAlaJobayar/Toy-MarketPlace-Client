@@ -1,11 +1,13 @@
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 const SingUp = () => {
     const { createUser } = useContext(AuthContext);
     console.log(createUser);
-   
+    useEffect(() => {
+        document.title = (` SingUP--Funtopia`);
+    }, []);
 
     const handleLogin = (event) => {
         event.preventDefault();

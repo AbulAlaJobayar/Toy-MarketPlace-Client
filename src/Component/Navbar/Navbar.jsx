@@ -31,7 +31,7 @@ const Navbar = () => {
                             user ? <>
                                 <li><Link to='/mytoys' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
                                 <li><Link to='/alltoys' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
-                                <li onClick={handleLogout} className='text-base font-bold text-[#181D4E]'>Logout</li>
+                                <li onClick={handleLogout} className=' font-bold text-[#181D4E] cursor-pointer hover:bg-base-300 rounded'>Logout</li>
                                 <li>
 
                                     <div>
@@ -58,7 +58,7 @@ const Navbar = () => {
                             user ? <>
                                 <li><Link to='/mytoys' className='text-base font-bold text-[#181D4E]'>My Toys</Link></li>
                                 <li><Link to='/addatoy' className='text-base font-bold text-[#181D4E]'>Add A Toy</Link></li>
-                                <li onClick={handleLogout} className='text-base p-7 font-bold text-[#181D4E]'>Logout</li>
+                                <li onClick={handleLogout} className=' p-7 font-bold text-[#181D4E] cursor-pointer hover:bg-base-300 rounded'>Logout</li>
                                 <li>
                                     <div>
                                         <img className='w-12 h-12 rounded-full' src={user?.photoURL} title={user?.displayName || "no name found"} />

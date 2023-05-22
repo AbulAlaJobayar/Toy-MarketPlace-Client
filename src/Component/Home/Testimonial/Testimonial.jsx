@@ -11,7 +11,8 @@ const Testimonial = () => {
                     What Our Clients Say About Us
                 </h1>
                 <p className='texl-base text-white mt-5'>We appreciate your kind and honest feedback and invite you to our amazing store.</p>
-                <button className='btn btn-primary rounded-xl mt-10'>About us</button>
+                <button className='btn btn-primary rounded-xl mt-10' data-aos="fade-right"
+                        data-aos-duration="2000">About us</button>
             </div>
 
             {/* card1 */}

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateToy = () => {
     const data = useLoaderData()
     // Price, available quantity, Detail description)
-    const { category, details, photo, price, quantity, rating, sellerName, selleremail, toyName, _id } = data || {};
+    const {  details,  price, quantity,  _id } = data || {};
 
     const handleUpdatedToy = event => {
         event.preventDefault();
@@ -44,7 +44,9 @@ const UpdateToy = () => {
             }
         })
     }
-
+    useEffect(() => {
+        document.title = (` Update Toy--Funtopia`);
+    }, []);
 
 
     return (

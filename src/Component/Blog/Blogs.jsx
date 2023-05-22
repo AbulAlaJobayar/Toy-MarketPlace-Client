@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 const Blogs = () => {
-  
+    useEffect(() => {
+        document.title = (` Blogs--Funtopia`);
+    }, []);
     return (
         <div className='w-5/6 mx-auto '>
             <h1 className='text-5xl font-bold text-center my-10'>Blog page</h1>
