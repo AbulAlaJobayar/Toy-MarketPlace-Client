@@ -17,7 +17,7 @@ const Testimonial = () => {
 
             {/* card1 */}
             <div className='mr-7'>
-                <div className="card w-full bg-base-100 mx-5  py-20">
+                <div className="card w-full bg-base-100 mx-5  pt-20">
                     
                     <div className="card-body ">
                         <h2 className="card-title mb-5">What a great store for the entire <br /> family! My kids love this place <br /> because of the toys!</h2>

@@ -11,7 +11,7 @@ const Approch = () => {
                 <div className='1/2'>
                     <p className="text-base font-medium mb-5 pt-28">CREATIVE APPROACH</p>
                     <h1 className="text-5xl font-bold">We help you take care of the kids</h1>
-                    <p className="py-6  px-5git ">Not only do we sell toys, but we also try to make sure that your children are <br /> safe playing, learning, and having fun!</p>
+                    <p className="py-6  px-5 ">Not only do we sell toys, but we also try to make sure that your children are <br /> safe playing, learning, and having fun!</p>
                     <img className='h-60 w-60 mx-auto' src="https://i.ibb.co/xmbjnhk/anthony-wade-ZXem8w-Xw-Pig-unsplash.jpg" alt="" data-aos="fade-up"
                         data-aos-duration="3000" />
                 </div>
