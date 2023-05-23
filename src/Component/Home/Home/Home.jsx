@@ -27,7 +27,7 @@ const Home = () => {
                         data-aos-duration="1000" >
                     <p className='text-4xl font-bold  text-second-Color mb-5 border-b-4 rounded border-[#181D4E] w-40 mx-auto pt-10'>Gallery</p>
 
-                    <h1 className='text-xl  text-second-color'>As you step inside, you are greeted by a vibrant display of colorful toys arranged in playful exhibits. <br /> From action figures and dolls to board games and puzzles, the gallery offers a diverse
+                    <h1 className='text-xl  text-second-color mx-10'>As you step inside, you are greeted by a vibrant display of colorful toys arranged in playful exhibits. <br /> From action figures and dolls to board games and puzzles, the gallery offers a diverse
                         <br /> selection to suit every interest and passion.</h1>
                 </div>
 
