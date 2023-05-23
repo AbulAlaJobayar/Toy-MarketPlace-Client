@@ -39,7 +39,7 @@ const AddAToy = () => {
            toyName:toyName,
            sellerName:sellerName,
             selleremail:selleremail,
-            price:price,
+            price:parseInt(price),
             rating:rating,
             quantity:quantity,
             details:details,
